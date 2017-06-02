@@ -21,6 +21,7 @@ public class deteksiMenopauseUI extends javax.swing.JFrame {
     /** Creates new form deteksiMenopause3GUI */
     public deteksiMenopauseUI() {
         initComponents();
+        warning.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -34,124 +35,101 @@ public class deteksiMenopauseUI extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        analisa = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jLabel4 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        usia = new javax.swing.JLabel();
+        emosiLabil = new javax.swing.JLabel();
+        sensitif = new javax.swing.JLabel();
+        tidakTeratur = new javax.swing.JLabel();
+        usiaYa = new javax.swing.JRadioButton();
+        usiaTidak = new javax.swing.JRadioButton();
+        emosiLabilYa = new javax.swing.JRadioButton();
+        emosiLabilTidak = new javax.swing.JRadioButton();
+        sensitifYa = new javax.swing.JRadioButton();
+        sensitifTidak = new javax.swing.JRadioButton();
+        tidakTeraturYa = new javax.swing.JRadioButton();
+        tidakTeraturTidak = new javax.swing.JRadioButton();
+        analisa = new javax.swing.JButton();
+        warning = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Deteksi Menopause");
 
-        javax.swing.GroupLayout analisaLayout = new javax.swing.GroupLayout(analisa);
-        analisa.setLayout(analisaLayout);
-        analisaLayout.setHorizontalGroup(
-            analisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
-        );
-        analisaLayout.setVerticalGroup(
-            analisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 257, Short.MAX_VALUE)
-        );
+        usia.setText("Apakah usia pasien 40-50 tahun ke atas?");
 
-        jScrollPane2.setViewportView(analisa);
+        emosiLabil.setText("Apakah keadaan emosi pasien labil?");
 
-        jButton2.setText("Tidak");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        sensitif.setText("Apakah pasien semakin merasa sensitif dengan lingkungan sekitar?");
+
+        tidakTeratur.setText("Apakah siklus haid pasien tidak teratur?");
+
+        usiaYa.setText("Ya");
+        usiaYa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usiaYaMouseClicked(evt);
             }
         });
 
-        jButton3.setText("Ya");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        usiaTidak.setText("Tidak");
+        usiaTidak.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usiaTidakMouseClicked(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Kesimpulan");
+        emosiLabilYa.setText("Ya");
+        emosiLabilYa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                emosiLabilYaMouseClicked(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Pertanyaan");
+        emosiLabilTidak.setText("Tidak");
+        emosiLabilTidak.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                emosiLabilTidakMouseClicked(evt);
+            }
+        });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Hasil");
+        sensitifYa.setText("Ya");
+        sensitifYa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sensitifYaMouseClicked(evt);
+            }
+        });
 
-        jScrollPane1.setViewportView(jTextPane1);
+        sensitifTidak.setText("Tidak");
+        sensitifTidak.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sensitifTidakMouseClicked(evt);
+            }
+        });
 
-        jScrollPane3.setViewportView(jTextPane2);
+        tidakTeraturYa.setText("Ya");
+        tidakTeraturYa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tidakTeraturYaMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(11, 11, 11)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
+        tidakTeraturTidak.setText("Tidak");
+        tidakTeraturTidak.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tidakTeraturTidakMouseClicked(evt);
+            }
+        });
 
-        jLabel4.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Deteksi Menopause");
+        analisa.setText("Analisa");
+        analisa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                analisaMouseClicked(evt);
+            }
+        });
+
+        warning.setForeground(new java.awt.Color(255, 0, 0));
+        warning.setText("Jawaban pertanyaan tidak boleh ada yang kosong");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,31 +137,137 @@ public class deteksiMenopauseUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(usia)
+                            .addComponent(emosiLabil)
+                            .addComponent(sensitif)
+                            .addComponent(tidakTeratur)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(usiaYa)
+                                .addGap(18, 18, 18)
+                                .addComponent(usiaTidak))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(emosiLabilYa)
+                                .addGap(18, 18, 18)
+                                .addComponent(emosiLabilTidak))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(sensitifYa)
+                                .addGap(18, 18, 18)
+                                .addComponent(sensitifTidak))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tidakTeraturYa)
+                                .addGap(18, 18, 18)
+                                .addComponent(tidakTeraturTidak)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(warning)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(analisa)))
                 .addContainerGap())
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(usia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usiaYa)
+                    .addComponent(usiaTidak))
+                .addGap(18, 18, 18)
+                .addComponent(emosiLabil)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emosiLabilYa)
+                    .addComponent(emosiLabilTidak))
+                .addGap(16, 16, 16)
+                .addComponent(sensitif)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sensitifYa)
+                    .addComponent(sensitifTidak))
+                .addGap(18, 18, 18)
+                .addComponent(tidakTeratur)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tidakTeraturYa)
+                    .addComponent(tidakTeraturTidak))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(analisa)
+                    .addComponent(warning))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String jawaban="ya";
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void usiaYaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usiaYaMouseClicked
+        warning.setVisible(false);
+        usiaTidak.setSelected(false);// TODO add your handling code here:
+        deteksimenopause.DeteksiMenopause.usia=true;
+    }//GEN-LAST:event_usiaYaMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String jawaban="tidak";
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void usiaTidakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usiaTidakMouseClicked
+        warning.setVisible(false);
+        usiaYa.setSelected(false);// TODO add your handling code here:
+        deteksimenopause.DeteksiMenopause.usia=false;
+    }//GEN-LAST:event_usiaTidakMouseClicked
+
+    private void emosiLabilYaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emosiLabilYaMouseClicked
+        warning.setVisible(false);
+        emosiLabilTidak.setSelected(false);
+        deteksimenopause.DeteksiMenopause.emosiLabil=true;// TODO add your handling code here:
+    }//GEN-LAST:event_emosiLabilYaMouseClicked
+
+    private void emosiLabilTidakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emosiLabilTidakMouseClicked
+        warning.setVisible(false);
+        emosiLabilYa.setSelected(false);
+        deteksimenopause.DeteksiMenopause.emosiLabil=false;// TODO add your handling code here:
+    }//GEN-LAST:event_emosiLabilTidakMouseClicked
+
+    private void sensitifYaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sensitifYaMouseClicked
+        warning.setVisible(false);
+        sensitifTidak.setSelected(false);
+        deteksimenopause.DeteksiMenopause.sensitif=true;// TODO add your handling code here:
+    }//GEN-LAST:event_sensitifYaMouseClicked
+
+    private void sensitifTidakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sensitifTidakMouseClicked
+        warning.setVisible(false);
+        sensitifYa.setSelected(false);
+        deteksimenopause.DeteksiMenopause.sensitif=false;// TODO add your handling code here:
+    }//GEN-LAST:event_sensitifTidakMouseClicked
+
+    private void tidakTeraturYaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tidakTeraturYaMouseClicked
+        warning.setVisible(false);
+        tidakTeraturTidak.setSelected(false);
+        deteksimenopause.DeteksiMenopause.tidakTeratur=true;// TODO add your handling code here:
+    }//GEN-LAST:event_tidakTeraturYaMouseClicked
+
+    private void tidakTeraturTidakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tidakTeraturTidakMouseClicked
+        warning.setVisible(false);
+        tidakTeraturYa.setSelected(false);
+        deteksimenopause.DeteksiMenopause.tidakTeratur=false;// TODO add your handling code here:
+    }//GEN-LAST:event_tidakTeraturTidakMouseClicked
+
+    private void analisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_analisaMouseClicked
+        boolean error=false;
+        if (usiaYa.isSelected()==false&&usiaTidak.isSelected()==false)
+            error=true;
+        else if (sensitifYa.isSelected()==false&&sensitifTidak.isSelected()==false)
+            error=true;
+        else if (emosiLabilYa.isSelected()==false&&emosiLabilTidak.isSelected()==false)
+            error=true;
+        else if (tidakTeraturYa.isSelected()==false&&tidakTeraturTidak.isSelected()==false)
+            error=true;
+        if (error==true){
+            warning.setVisible(true);
+        }
+        else
+            deteksimenopause.DeteksiMenopause.analisaMenopause();// TODO add your handling code here:
+    }//GEN-LAST:event_analisaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -197,20 +281,23 @@ public class deteksiMenopauseUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel analisa;
+    private javax.swing.JButton analisa;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JLabel emosiLabil;
+    private javax.swing.JRadioButton emosiLabilTidak;
+    private javax.swing.JRadioButton emosiLabilYa;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JLabel sensitif;
+    private javax.swing.JRadioButton sensitifTidak;
+    private javax.swing.JRadioButton sensitifYa;
+    private javax.swing.JLabel tidakTeratur;
+    private javax.swing.JRadioButton tidakTeraturTidak;
+    private javax.swing.JRadioButton tidakTeraturYa;
+    private javax.swing.JLabel usia;
+    private javax.swing.JRadioButton usiaTidak;
+    private javax.swing.JRadioButton usiaYa;
+    private static javax.swing.JLabel warning;
     // End of variables declaration//GEN-END:variables
 }
